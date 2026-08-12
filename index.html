@@ -47,7 +47,7 @@
     padding:14px 24px;max-width:1080px;margin:0 auto;
   }
   .brand{display:flex;align-items:center;gap:10px;}
-  .brand img{height:46px;width:auto;}
+  .brand img{height:64px;width:auto;}
   nav.links{display:flex;gap:28px;}
   nav.links a{color:var(--dark-blue);font-weight:500;font-size:15px;}
   nav.links a:hover{color:var(--teal);}
@@ -60,13 +60,21 @@
 
   /* Hero */
   .hero{
-    padding:84px 24px 64px;
+    aspect-ratio:16/5;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:24px;
     text-align:center;
-    background:radial-gradient(circle at 50% -10%,var(--teal-tint),#fff 60%);
+    background-image:url('assets/hero-bg.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
   }
   .hero-brand{
     font-size:60px;font-weight:800;letter-spacing:-.01em;
     color:var(--dark-blue);margin:0 0 14px;
+  }
+  .hero-logo{
+    height:150px;width:auto;margin:0 auto 20px;
   }
   .slogan{
     font-style:italic;font-size:19px;color:var(--dark-teal);font-weight:500;
@@ -152,7 +160,11 @@
   .team-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
 
   /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .contact-grid{
+    display:flex;flex-direction:column;align-items:center;gap:32px;
+    max-width:560px;margin:0 auto;text-align:center;
+  }
+  .contact-grid form{width:100%;text-align:left;}
   .contact-info p{color:var(--gray);}
   .contact-info a{font-weight:600;}
   .contact-detail{display:flex;align-items:center;gap:12px;margin:18px 0;font-size:15px;}
@@ -186,7 +198,9 @@
 
   @media (max-width:800px){
     nav.links{display:none;}
+    .hero{aspect-ratio:unset;min-height:320px;}
     .hero-brand{font-size:44px;}
+    .hero-logo{height:90px;}
     .hero h1{font-size:26px;}
     .about-grid,.rain-grid,.contact-grid{grid-template-columns:1fr;}
     .avatar-photo{width:260px;margin:0 auto;}
@@ -199,50 +213,13 @@
 <header>
   <div class="nav">
     <div class="brand"><img src="assets/logo.png" alt="RainOrg LLC logo"></div>
-    <nav class="links">
-      <a href="#rainorg">About RainOrg</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="#contact" class="nav-cta">Get in Touch</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <div class="hero-brand">RainOrg</div>
+    <img src="assets/logo.png" alt="RainOrg LLC logo" class="hero-logo">
     <p class="slogan">"Nourishing business growth through fractional leadership."</p>
-    <h1>Reliable Support, Wherever Your Nonprofit Needs It</h1>
-    <p class="desc">RainOrg gives nonprofits and mission-driven organizations senior-level support that adapts to what they actually need — without the cost of a full-time hire.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Start a Conversation</a>
-      <a href="#rainorg" class="btn btn-secondary">Learn More</a>
-    </div>
-  </div>
-</section>
-
-<section id="rainorg">
-  <div class="wrap rain-grid">
-    <div>
-      <h2>About RainOrg</h2>
-      <p>RainOrg LLC is a Florida-based consulting practice built to support nonprofits and mission-driven organizations with fractional business and administrative support. The name reflects how we work: rain nourishes soil, rivers, oceans, and forests — and RainOrg exists to nourish the growth of the organizations we work with, across whatever mix of support they actually need.</p>
-      <p>Every nonprofit is different, so every engagement looks a little different too — sometimes it's mostly administrative and operational, sometimes it leans more on HR, sometimes it's communications and platform management. RainOrg shapes itself around what the organization actually needs, rather than offering a single fixed service.</p>
-      <p>We work with a small number of organizations at a time so every engagement gets real attention, not a one-size-fits-all template.</p>
-      <ul class="pill-list">
-        <li>Executive & Administrative Support</li>
-        <li>Business Operations</li>
-        <li>HR & People Operations</li>
-        <li>Social Media & Marketing</li>
-        <li>Platform & Systems Management</li>
-      </ul>
-    </div>
-    <div class="rain-side">
-      <div class="rain-visual">
-        <img src="assets/logo.png" alt="RainOrg LLC logo">
-      </div>
-      <div class="team-photo">
-        <img src="assets/team-meeting.jpg" alt="A collaborative conversation between colleagues">
-      </div>
-    </div>
   </div>
 </section>
 
